@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <p id="vozdraP">Vozdra šta ima ha </p>
+    <button onclick="klikniNaMene()">Click me</button>
+    <script>
+        //HTML - DOM  document -> html -> head/body -> p
+        document.write("Mojne meni ha");
+
+
+        function klikniNaMene(){
+           let vozdraParagraf = document.getElementById("vozdraP");
+           vozdraParagraf.innerHTML="Mojne meni HAA";
+        }
+    </script>
+</body>
+</html>

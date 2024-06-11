@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AJAX Demo</title>
+  </head>
+  <body>
+    <div id="demo1"></div>
+    <h2>XMLHttpRequest objekat</h2>
+    <button onclick="loadContent()" type="button">Change Content</button>
+    <script>
+      function loadContent() {
+        fetch("http://localhost:8080/celebration-1.0-SNAPSHOT/api/towns")
+          .then((response) => {
+            const privileges = JSON.parse(response.text);
+            //[{id,name}, {id, name}]
+            for (const privilege of privileges) {
+              let todoDiv = document.createElement("div");
+              todoDiv.innerHTML = privilege.name + "[" + privilege.id + "]";
+              demoDiv.appendChild(todoDiv);
+            }
+          })
+          .then((json) => console.log(json));
+      }
+    </script>
+  </body>
+</html>
